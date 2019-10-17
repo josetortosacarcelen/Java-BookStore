@@ -58,6 +58,10 @@ public class ControllerServlet extends HttpServlet {
           break;
 				case "/insert":
 					insertBook(request, response);
+		break;
+				case "/delete":
+					deleteBook(request, response);
+					
           break;
         default:
 				   listBooks(request, response);
@@ -68,7 +72,7 @@ public class ControllerServlet extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-
+	
 	private void showBookAdmin(HttpServletRequest request, HttpServletResponse response)
 			throws ClassNotFoundException, SQLException, ServletException, IOException {
 		ArrayList<Book> books_list = bookDAO.listAllBooks();
@@ -104,6 +108,14 @@ public class ControllerServlet extends HttpServlet {
 		bookDAO.insertBook(newBook);
 		response.sendRedirect("list");
 	}
+	
+	private void deleteBook(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException, ClassNotFoundException, SQLException	{
+		
+		
+	}
+
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
