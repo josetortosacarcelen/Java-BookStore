@@ -137,7 +137,7 @@ public class ControllerServlet extends HttpServlet {
 		book.price = Float.parseFloat(priceString);
 		bookDAO.updateBook(book);
 		
-		response.sendRedirect(location);
+		response.sendRedirect("list");
 		
 	}
 
